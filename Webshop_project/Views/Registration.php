@@ -28,3 +28,6 @@
     </form>
     </div>
     </div>
+<?php
+    include "Footer.php";
+?>
