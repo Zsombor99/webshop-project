@@ -10,14 +10,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     $PhoneNumber = $_POST['PhoneNumber'];
     $Password = $_POST['Password'];
     
-    $IsUser = mysqli_query($Connection, "SELECT `EmailAddress` FROM User WHERE EmailAddress = '$EmailAddress'");
+    $IsUser = mysqli_query($Connection, "SELECT `EmailAddress` FROM `User` WHERE `EmailAddress` = '$EmailAddress'");
     
     $rows = mysqli_num_rows($IsUser);
     
     if($rows > 0) {
         echo "This e-mail has already been registered!";
     } else {
-        $reg = "INSERT INTO User (`FirstName`,
+        $reg = "INSERT INTO `User` (`FirstName`,
                                   `LastName`,
                                   `Address`,
                                   `EmailAddress`,
