@@ -5,12 +5,18 @@ Route::set('index.php', function(){
 });
 
 Route::set('about_us', function(){
-    AboutUS::CreateView('AboutUs');
-    AboutUS::test();
+    AboutUs::CreateView('AboutUs');
+    AboutUs::test();
 });
 
 Route::set('contact_us', function(){
-    ContactUS::CreateView('ContactUs');
+    ContactUs::CreateView('ContactUs');
 });
 
+Route::set('register', function(){
+    Register::CreateView('Register');
+});
+Route::set('login', function(){
+    Register::CreateView('Login');
+});
 ?>

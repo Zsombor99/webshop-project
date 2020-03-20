@@ -5,9 +5,9 @@
 </footer>
 
 
-<script src="<?=URL?>/assets/vendor/jquery/jquery-3.4.1.min.js"></script>
-<script src="<?=URL?>/assets/vendor/jquery/jquery-3.4.1"></script>
-<script src="<?=URL?>/assets/vendor/js/bootstrap.bundle.min.js"></script>
+<script src="<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>assets/vendor/jquery/jquery-3.4.1.min.js"></script>
+<script src="<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>assets/vendor/jquery/jquery-3.4.1"></script>
+<script src="<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>assets/vendor/js/bootstrap.bundle.min.js"></script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>

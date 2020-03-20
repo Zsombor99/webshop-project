@@ -13,12 +13,14 @@
 <div>
     <nav>            
         <ul class="main_menu">
+        
+        
             <img src="../assets/pictures/logo.png" alt="Webshop logo" width="100%" height="100%">
-            <li class="menu"><a class="amenu" href='/Webshop_project/'>Home</a></li>
-            <li class="menu"><a class="amenu" href='/Webshop_project/contact_us'>Contact</a></li>
-            <li class="menu"><a class="amenu" href='/Webshop_project/about_us'>About</a></li>
-            <li class="menu"><a class="amenu" href='/Webshop_project/login'>Login</a></li>  
-            <li class="menu"><a class="amenu" href='/Webshop_project/register'>Register</a></li>  
+            <li class="menu"><a class="amenu" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>/'>Home</a></li>
+            <li class="menu"><a class="amenu" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>contact_us'>Contact</a></li>
+            <li class="menu"><a class="amenu" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>about_us'>About</a></li>
+            <li class="menu"><a class="amenu" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>login'>Login</a></li>  
+            <li class="menu"><a class="amenu" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>register'>Register</a></li>  
         </ul>
     </nav>
 </div>
