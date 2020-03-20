@@ -1,7 +1,7 @@
 <html>
     <head>
-    <title> Login </title>
-    <link rel stylesheet type="text/css"
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <meta charset="UTF-8">
 </head>

@@ -4,7 +4,7 @@
 <html>
     <head>
     <title>Register</title>
-    <link rel stylesheet type="text/css"
+    <link rel="stylesheet" type="text/css"
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <meta charset="UTF-8">
 </head>
@@ -17,7 +17,7 @@
     <form action="Register.php" method="post">
         <div class="form-group">
         <label>Username</label>
-        <input type="text" name="user" class="form-control" required>
+        <input type="text" name="userName" class="form-control" required>
         </div>
         <div class="form-group">
         <label>Email</label>

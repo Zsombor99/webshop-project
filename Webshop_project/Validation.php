@@ -7,10 +7,10 @@ $con = mysqli_connect('localhost','root','');
 mysqli_select_db($con, 'webshop');
 
 $name = $_POST['user'];
-$pass = $_POST['passoword'];
+$pass = $_POST['password'];
 $email = $_POST['email'];
 
-$s = " SELECT * FROM user WHERE userName = '$name' && password = '$pass'";
+$s = " SELECT * FROM users WHERE userName = '$name' && password = '$pass'";
 
 $result = mysqli_query($con, $s);
 
@@ -21,6 +21,6 @@ if($num == 1) {
 }
 
 else {
-    header('location:Login.php');
+    header('location:LoginForm.php');
 }
 ?>
