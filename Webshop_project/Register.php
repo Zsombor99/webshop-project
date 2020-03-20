@@ -1,29 +1,32 @@
 <?php
-
 session_start();
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $Connection = mysqli_connect('localhost','root','', "webshop");
 
+    $FirstName = $_POST['FirstName'];
+    $LastName = $_POST['LastName'];
+    $Address = $_POST['Address'];
+    $EmailAddress = $_POST['EmailAddress'];
+    $PhoneNumber = $_POST['PhoneNumber'];
+    $Password = $_POST['Password'];
+    
+    $IsUser = mysqli_query($Connection, "SELECT `EmailAddress` FROM User WHERE EmailAddress = '$EmailAddress'");
+    
+    $rows = mysqli_num_rows($IsUser);
+    
+    if($rows > 0) {
+        echo "This e-mail has already been registered!";
+    } else {
+        $reg = "INSERT INTO User (`FirstName`,
+                                  `LastName`,
+                                  `Address`,
+                                  `EmailAddress`,
+                                  `PhoneNumber`,
+                                  `PasswordHash`,
+                                  `RegDate`)
+                           VALUES ($FirstName, $LastName, $Address, $EmailAddress, $PhoneNumber, $Password, " . time() . ")";
+        mysqli_query($con,$reg);
 
-$con = mysqli_connect('localhost','root','');
-
-mysqli_select_db($con, 'webshop');
-
-$name = $_POST['user'];
-$pass = $_POST['password'];
-$email = $_POST['email'];
-
-$s = " SELECT * FROM users WHERE userName = '$name'";
-
-$result = mysqli_query($con, $s);
-
-$num = mysqli_num_rows($result);
-
-if($num == 1) {
-    echo "Username already taken!";
+        echo "Registration successful!";
+    }
 }
-
-else {
-    $reg = " insert into users(userName, password, email) values ('$name', '$pass','$email')";
-    mysqli_query($con,$reg);
-    echo "Registration successful!";
-}
-?>
