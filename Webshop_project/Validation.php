@@ -1,26 +1,22 @@
 <?php
-
 session_start();
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $Connection = mysqli_connect('localhost','root','', "webshop");
 
-$con = mysqli_connect('localhost','root','');
-
-mysqli_select_db($con, 'webshop');
-
-$name = $_POST['user'];
-$pass = $_POST['password'];
-$email = $_POST['email'];
-
-$s = " SELECT * FROM users WHERE userName = '$name' && password = '$pass'";
-
-$result = mysqli_query($con, $s);
-
-$num = mysqli_num_rows($result);
-
-if($num == 1) {
-   header('location:Home.php');
+    $FirstName = $_POST['FirstName'];
+    $LastName = $_POST['LastName'];
+    $Address = $_POST['Address'];
+    $EmailAddress = $_POST['EmailAddress'];
+    $PhoneNumber = $_POST['PhoneNumber'];
+    $Password = $_POST['Password'];
+    
+    $User = mysqli_query($Connection, "SELECT `EmailAddress` FROM `User` WHERE `EmailAddress` = '$EmailAddress' AND `PasswordHash` = '$Password'");
+    
+    $rows = mysqli_num_rows($User);
+    
+    if($rows > 0) {
+        header("Location: Home.php");
+    } else {
+        header("Location: LoginForm.php");
+    }
 }
-
-else {
-    header('location:LoginForm.php');
-}
-?>
