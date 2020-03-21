@@ -1,22 +1,35 @@
 <?php
-class Database{
-    public static $host = "localhost";
-    public static $dbName = "webshop";
-    public static $username = "root";
-    public static $password = "";
-
-    private static function conncect(){
-        $pdo = new PDO("mysql:host=".self::$host.";dbname=".self::$dbName.";charset=utf8", self::$username, self::$password);
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $pdo;
-    }
-    public static function query($query,$params = array()){
-        $statement = self::conncect()->prepare($query);
-        $statement->execute($params);
-        if(explode(' ',$query)[0] == 'SELECT'){
-            $data = $statement -> fetchAll();
-            return $data;
+class Database
+    {
+        public static $Host = "localhost";
+        public static $Db = "webshop";
+        public static $Username = "root";
+        public static $Password = "";
+        
+        public static function Connect() {
+            try {
+                $PDO = new PDO("mysql:host=".self::$Host.";dbname=".self::$Db.";charset=utf8;", self::$Username, self::$Password);
+                $PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                return $PDO;
+            } catch(PDOException $e) {
+                return "Database connection error: {$e->getMessage()}";
+            }
+            
         }
+
+        public static function Query($PreparedQuery = "", $Params = []) {
+            try {
+                $stmt = self::Connect()->prepare($PreparedQuery);
+                for($i = 0; $i < count($Params); ++$i) {
+                    $stmt->bindParam($i+1, $Params[$i]);
+                }
+                $stmt->bindParam(1, $Params[0]);
+                $stmt->execute();
+                return $stmt->fetchAll();
+            } catch(PDOException $e) {
+                return "Query error: {$e->getMessage()}";
+            }
+        }
+        
     }
-}
 ?>
