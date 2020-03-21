@@ -50,13 +50,13 @@ CREATE TABLE `OrderItem`(
     FOREIGN KEY(`ProductId`) REFERENCES `Product`(Id),
     FOREIGN KEY(`OrderId`) REFERENCES `Order`(Id)
 );
-/* ADMIN SEED user: admin@webshop.hu password: password (password need to be hashed and saved into column PasswordHash) */
+/* ADMIN SEED user: admin@webshop.hu password: password (password is hashed with php password hash bcrypt option) */
 /* User levels: 0- normal(default), 1- admin*/
 INSERT INTO `User`
 (`Id`, `FirstName`, `LastName`, `Address`, `EmailAddress`,
 `PhoneNumber`, `UserLevel`, `PasswordHash`, `RegDate`)
 VALUES (1, 'Admin', 'Admin', '3300 Eger Érsek u. 9.',
-'admin@webshop.hu', '+36209988998', 1, 'password', (SELECT UNIX_TIMESTAMP()));
+'admin@webshop.hu', '+36209988998', 1, '$2y$10$4w2ew8qgkv5IBo3hyXck4ek75HdmqymNtCI5GefCFX68.LOiEyDmi', (SELECT UNIX_TIMESTAMP()));
 
 /* Basic categories */
 INSERT INTO `Category` (`Name`) VALUES ('Fruits');
