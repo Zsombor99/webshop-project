@@ -1,8 +1,4 @@
-<?php
-    include "Header.php";
-?>
-<body>
-<div class="container">
+
     <div class="row">
     <div class="cold-md-6">
         <h2>Login</h2>
@@ -18,8 +14,3 @@
         <button type="submit" class="btn btn-primary"> Login </button>
     </form>
     </div>
-    </div>
-
-<?php
-    include "Footer.php";
-?>
