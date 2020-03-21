@@ -28,7 +28,7 @@ class Register extends Controller{
                                                 $Address,
                                                 $EmailAddress,
                                                 $PhoneNumber,
-                                                $Password,
+                                                password_hash($Password, PASSWORD_BCRYPT),
                                                 time()
                                             ]);
             $_SESSION["UserInfo"] = "Registration successful!";
