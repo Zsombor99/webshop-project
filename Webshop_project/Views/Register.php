@@ -1,5 +1,4 @@
-
-    <div class="row">
+<div class="row">
     <div class="cold-md-6">
         <h2>Register</h2>
         <form action="Register.php" method="post">
@@ -21,12 +20,13 @@
             </div>
             <div class="form-group">
             <label for="Address">Address</label>
-            <input id="Address"type="password" name="Address" class="form-control" required>
+            <input id="Address" type="text" name="Address" class="form-control" required>
             </div>
             <div clas s="form-group">
             <label for="PhoneNumber">PhoneNumber</label>
-            <input id="PhoneNumber" type="password" name="PhoneNumber" class="form-control" required>
+            <input id="PhoneNumber" type="text" name="PhoneNumber" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-primary"> Register </button>
         </form>
     </div>
+</div>
