@@ -24,7 +24,7 @@
         <?php include($Content)?>
     </main>
     <footer>
-        <p id="footer">Copyright &copy Webshop <?=date("Y")?></p>
+        <p id="footer">Copyright &copy; Webshop <?=date("Y")?></p>
         <div class="rc-anchor-pt"><a href="https://www.google.com/intl/hu/policies/privacy/" target="_blank">Adatvédelem</a><span aria-hidden="true" role="presentation"> - </span><a href="https://www.google.com/intl/hu/policies/terms/" target="_blank">Általános Szerződési Feltételek</a></div></div>
         <div class="contact">E-mail: webshop@webshop.com<br> Phone number:+36/1234567<br>Address: 3300, Eger, Érsek utca 9.</div>
     </footer>
