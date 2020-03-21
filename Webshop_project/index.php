@@ -1,10 +1,10 @@
 <?php
 
-function myAutoload($class_name){
-    if(file_exists('./classes/'.$class_name.'.php')){
-        require_once './classes/'.$class_name.'.php';
-    }elseif(file_exists('./Controllers/'.$class_name.'.php')){
-        require_once './Controllers/'.$class_name.'.php';
+function myAutoload($Class){
+    if(file_exists('./Models/'.$Class.'.php')){
+        require_once './Models/'.$Class.'.php';
+    }elseif(file_exists('./Controllers/'.$Class.'.php')){
+        require_once './Controllers/'.$Class.'.php';
     }
 }
     
