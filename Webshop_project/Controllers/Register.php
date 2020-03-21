@@ -1,7 +1,7 @@
 <?php
 class Register extends Controller{
     public static $Title = "Register";
-    public function _Register() {
+    public static function _Register() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $FirstName = $_POST['FirstName'];
             $LastName = $_POST['LastName'];

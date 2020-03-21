@@ -1,2 +1,5 @@
 <h1>Welcome!</h1>
-<?php print_r($_SESSION["UserInfo"]);
+<?php 
+if(!empty($_SESSION["UserInfo"])){
+    print_r($_SESSION["UserInfo"]);
+}

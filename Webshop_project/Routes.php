@@ -17,6 +17,6 @@ Route::set('register', function(){
     Register::CreateView('Register');
 });
 Route::set('login', function(){
-    Register::CreateView('Login');
+    Login::CreateView('Login');
 });
 ?>

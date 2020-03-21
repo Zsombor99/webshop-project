@@ -1,7 +1,7 @@
 <?php
 class Login extends Controller{
     public static $Title = "Login";
-    public function _Login() {
+    public static function _Login() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
            
             $EmailAddress = $_POST['EmailAddress'];
