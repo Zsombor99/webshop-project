@@ -1,7 +1,7 @@
 <div class="row">
     <div class="cold-md-6">
         <h2>Login</h2>
-        <form action="<?php Login::_Login(); ?>" method="post">
+        <form action="<?php Login::_Login() ?>" method="post">
             <div class="form-group">
                 <label for="EmailAddress">E-mail Address</label>
                 <input id="EmailAddress" type="email" name="EmailAddress" class="form-control" required>

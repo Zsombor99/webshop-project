@@ -1,7 +1,7 @@
 <div class="row">
     <div class="cold-md-6">
         <h2>Register</h2>
-        <form action="Register.php" method="post">
+        <form action="<?php Register::_Register() ?>" method="post">
             <div class="form-group">
                 <label for="FirstName">FirstName</label>
                 <input id="FirstName" type="text" name="FirstName" class="form-control" required>

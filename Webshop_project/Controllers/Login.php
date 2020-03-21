@@ -7,12 +7,12 @@ class Login extends Controller{
             $EmailAddress = $_POST['EmailAddress'];
             $Password = $_POST['Password'];
             
-            $User = self::query("SELECT `EmailAddress` FROM `User` WHERE `EmailAddress` = ? AND `PasswordHash` = ?", [$EmailAddress, $Password]);
-            
+            $User = self::Query("SELECT `EmailAddress` FROM `User` WHERE `EmailAddress` = ? AND `PasswordHash` = ?", [$EmailAddress, $Password]);
+
             if(count($User) > 0) {
-                $_SESSION["LoginInfo"] = "Successful login";
+                $_SESSION["UserInfo"] = "Successful login";
             } else {
-               $_SESSION["LoginInfo"] = "Wrong credentials!";
+               $_SESSION["UserInfo"] = "Wrong credentials!";
             }
             header("Location: index.php");
         }
