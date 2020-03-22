@@ -13,20 +13,22 @@
     <header>
         <nav class="navbar navbar-light bg-light navbar-fixed-top"> 
             <div class="container-fluid">
-                <form>
-                    <!-- Csak tudnám, hogy ez(img) miért nem akar jó lenni sehogy... -->
-                    <img src="assets\pictures\logo.jpg" alt="Webshop logo" width="100%" height="100%">
-                    <a class="btn btn-primary" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>'><i class="fa fa-home"></i> Home</a>
-                    <a class="btn btn-primary" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>contact_us'><i class="fa fa-address-book"></i> Contact</a>
-                    <a class="btn btn-primary" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>about_us'><i class="fa fa-info"></i> About</a>
-                    <!-- A logoutot meg kell írni ehhez, hogy rendesen működjön -->
-                    <?php if($_SESSION['UserInfo'] === "Successful login"): ?>
-                    <a class="btn btn-primary text-white"><i class="fa fa-sign-out"></i> Logout</a>
-                    <?php else: ?>
-                    <a class="btn btn-primary" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>login'><i class="fa fa-sign-in"></i> Login</a>
-                    <a class="btn btn-primary" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>register'><i class="fa fa-user-plus"></i> Register</a>
-                    <?php endif; ?>
-                </form>
+                <div class="row">
+                        <!-- Csak tudnám, hogy ez(img) miért nem akar jó lenni sehogy... -->
+                        <img src="assets\pictures\logo.jpg" alt="Webshop logo" width="100%" height="100%">
+                        <a class="btn btn-primary" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>'><i class="fa fa-home"></i> Home</a>
+                        <a class="btn btn-primary ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>contact_us'><i class="fa fa-address-book"></i> Contact</a>
+                        <a class="btn btn-primary ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>about_us'><i class="fa fa-info"></i> About</a>
+                        <!-- A logoutot meg kell írni ehhez, hogy rendesen működjön -->
+                        <?php if((isset($_SESSION["UserLogged"])) && ($_SESSION["UserLogged"] === True)): ?>
+                            <form action="<?php Logout::_Logout() ?>" method="POST">
+                                <button tpye="submit" class="btn btn-primary text-white ml-2"><i class="fa fa-sign-out"></i> Logout</button>
+                            </form>
+                        <?php else: ?>
+                        <a class="btn btn-primary ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>login'><i class="fa fa-sign-in"></i> Login</a>
+                        <a class="btn btn-primary ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>register'><i class="fa fa-user-plus"></i> Register</a>
+                        <?php endif; ?>
+                </div>
             </div>            
         </nav>
     </header>

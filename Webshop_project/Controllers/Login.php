@@ -8,9 +8,11 @@ class Login extends Controller{
             $Password = $_POST['Password'];
             
             $User = self::Query("SELECT `PasswordHash` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
-
+            //$_SESSION["UserLogged"] = False;
             if(count($User) > 0) {
                 if(password_verify($Password, $User[0]["PasswordHash"])) {
+                    session_start();
+                    $_SESSION["UserLogged"] = True;
                     $_SESSION["UserInfo"] = "Successful login";
                 } else {
                     $_SESSION["UserInfo"] = "Wrong credentials!";
