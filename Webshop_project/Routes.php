@@ -3,6 +3,9 @@
 Route::set('index.php', function(){
     Home::CreateView('Home');
 });
+Route::set('home', function(){
+    Home::CreateView('Home');
+});
 
 Route::set('about_us', function(){
     AboutUs::CreateView('AboutUs');

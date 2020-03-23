@@ -16,7 +16,7 @@
                 <div class="row">
                         <!-- Csak tudnám, hogy ez(img) miért nem akar jó lenni sehogy... -->
                         <img src="assets\pictures\logo.jpg" alt="Webshop logo" width="100%" height="100%">
-                        <a class="btn btn-primary" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>'><i class="fa fa-home"></i> Home</a>
+                        <a class="btn btn-primary" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>home'><i class="fa fa-home"></i> Home</a>
                         <a class="btn btn-primary ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>contact_us'><i class="fa fa-address-book"></i> Contact</a>
                         <a class="btn btn-primary ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>about_us'><i class="fa fa-info"></i> About</a>
                         <!-- A logoutot meg kell írni ehhez, hogy rendesen működjön -->
