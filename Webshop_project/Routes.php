@@ -24,4 +24,8 @@ Route::set('login', function(){
     Login::CreateView('Login');
 });
 
+Route::set('profile', function(){
+    Profile::CreateView('Profile');
+});
+
 ?>
