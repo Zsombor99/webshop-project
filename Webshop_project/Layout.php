@@ -6,6 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="assets/css/main.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title><?= $Title ?></title>
@@ -14,18 +15,17 @@
 <body>
     <header>
 
-        <nav class="bg-light">
-            <div class="d-flex flex-row align-items-center">
-            <div class="d-flex flex-row align-items-center">                        
+        <nav class="bg-light fixed-top">
+            <div class="d-flex flex-row align-items-center">      
                 <img src="assets\pictures\logo.jpg" alt="Webshop logo" width="10%" height="10%">
                 <a class="btn btn-success" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>home'><i class="fa fa-home"></i> Home</a>
                 <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>contact_us'><i class="fa fa-address-book"></i> Contact</a>
                 <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>about_us'><i class="fa fa-info"></i> About</a>
-                <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>products'><i class="fa fa-info"></i> Products</a>
+                <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>products'><i class="fa fa-product-hunt"></i> Products</a>
                 <?php if((isset($_SESSION["UserLogged"])) && ($_SESSION["UserLogged"] === True)): ?>
                     <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>profile'><i class="fa fa-user"></i></i> Profile</a>
-                    <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>loadup'><i class="fa fa-info"></i> Loadup</a>
-                    <form action="<?php Logout::_Logout() ?>" method="POST" class="ml-auto mr-2">
+                    <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>loadup'><i class="fa fa-upload"></i> Loadup</a>
+                    <form action="<?php Logout::_Logout() ?>" method="POST" class="d-flex ml-auto mr-2">
                         <button type="submit" class="btn btn-success text-white ml-2"><i class="fa fa-sign-out"></i> Logout</button>
                     </form>
                 <?php else : ?>
