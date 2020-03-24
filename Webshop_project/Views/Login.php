@@ -1,16 +1,16 @@
 <style>
 .form-container {
-    border: 1px solid #ffffff;
+    border: 1px solid #4e0e0f;
     padding: 50px 60px;
     margin-top: 6vh;
     -webkit-box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
     box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
-    background-color: rgb(68, 43, 22)
+    background-color: #28a745
 
 }
 .tx {
-    color: white;
+    color: #e4feff;
 }
 
 </style>
@@ -29,7 +29,7 @@
                 <label class="tx" for="Password">Password</label>
                 <input id="Password" type="password" name="Password" class="form-control" required>
             </div>
-            <button type="submit" class="btn btn-success btn-block">Login</button>
+            <button type="submit" class="btn btn-warning btn-block">Login</button>
         </form>
     </div>
 </div>
