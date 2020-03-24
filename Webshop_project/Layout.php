@@ -16,6 +16,7 @@
 
         <nav class="bg-light">
             <div class="d-flex flex-row align-items-center">
+            <div class="d-flex flex-row align-items-center">                        
                 <img src="assets\pictures\logo.jpg" alt="Webshop logo" width="10%" height="10%">
                 <a class="btn btn-success" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>home'><i class="fa fa-home"></i> Home</a>
                 <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>contact_us'><i class="fa fa-address-book"></i> Contact</a>
@@ -23,6 +24,7 @@
                 <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>products'><i class="fa fa-info"></i> Products</a>
                 <?php if((isset($_SESSION["UserLogged"])) && ($_SESSION["UserLogged"] === True)): ?>
                     <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>profile'><i class="fa fa-user"></i></i> Profile</a>
+                    <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>loadup'><i class="fa fa-info"></i> Loadup</a>
                     <form action="<?php Logout::_Logout() ?>" method="POST" class="ml-auto mr-2">
                         <button type="submit" class="btn btn-success text-white ml-2"><i class="fa fa-sign-out"></i> Logout</button>
                     </form>
