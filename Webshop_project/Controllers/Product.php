@@ -10,7 +10,7 @@ class Product extends Controller{
         return self::Query("SELECT `Name` FROM `Product` WHERE `Id` = ?", [$Id])[0][0];
     }
     public static function GetInStockNumberOfProductById($Id) {
-        return self::Query("SELECT `InStock` FROM `Product` WHERE `Id` = ?", [$Id])[0][0];
+        return self::Query("SELECT `InStock` FROM `Product` WHERE `Id` = ?", [$Id])[0][0] > 0 ? "Yes" : "No";
     }
     public static function GetPriceOfProductById($Id) {
         return self::Query("SELECT `Price` FROM `Product` WHERE `Id` = ?", [$Id])[0][0];

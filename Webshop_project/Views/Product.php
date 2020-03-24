@@ -76,7 +76,7 @@
         <img src="assets/pictures/<?=rand(1,4)?>.png" />
         <h2><?php $a = ["Big", "Tomato", "Mouth", "Body", "Apple", "Balls", "Hamburger", "Yellow stone", "Dildo"]; echo $a[rand(0, count($a) - 1)] ?></h2>
         <hr />
-        <span class="instock"><?=" InStock: ".rand(0,10);?></span>
+        <span class="instock"><?php $a = ["Yes","No"]; echo "InStock: ".$a[rand(0,count($a) - 1 )] ?></span>
         <span class="price"><?=rand(1,5000)?> $</span>
         <a class="btn btn-success" href="">Buy it!</a>
     </div>
