@@ -28,4 +28,8 @@ Route::set('profile', function(){
     Profile::CreateView('Profile');
 });
 
+Route::set('products', function(){
+    Product::CreateView('Product');
+});
+
 ?>

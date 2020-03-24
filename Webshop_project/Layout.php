@@ -18,6 +18,7 @@
                 <a class="btn btn-success" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>home'><i class="fa fa-home"></i> Home</a>
                 <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>contact_us'><i class="fa fa-address-book"></i> Contact</a>
                 <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>about_us'><i class="fa fa-info"></i> About</a>
+                <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>products'><i class="fa fa-info"></i> Products</a>
                 <?php if((isset($_SESSION["UserLogged"])) && ($_SESSION["UserLogged"] === True)): ?>
                     <a class="btn btn-success ml-2" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>profile'><i class="fa fa-user"></i></i> Profile</a>
                     <form action="<?php Logout::_Logout() ?>" method="POST" class="ml-auto mr-2">
