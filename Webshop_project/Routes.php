@@ -32,4 +32,8 @@ Route::set('products', function(){
     Product::CreateView('Product');
 });
 
+Route::set('loadup', function(){
+    Product::CreateView('Loadup');
+});
+
 ?>
