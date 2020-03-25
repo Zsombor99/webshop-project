@@ -22,7 +22,6 @@ CREATE TABLE `Product`(
     `Name` VARCHAR(255) NOT NULL,
     `Image` VARCHAR(255) NOT NULL,
     `PiecesLeft` INT NOT NULL,
-    `InStock` BOOLEAN NOT NULL,
     `Description` TEXT NOT NULL,
     `Price` INT NOT NULL,
     `CategoryId` INT NOT NULL,
@@ -67,11 +66,11 @@ INSERT INTO `Category` (`Name`) VALUES ('Furniture');
 
 /* Some template product */
 
-INSERT INTO `Product` (`Name`,`Image`,`PiecesLeft`, `InStock`, `Description`, `Price`, `CategoryId`)
-VALUES ('Apple','../assets/pictures/2.png', 30, TRUE, 'Apple is fine', 300, 1);
+INSERT INTO `Product` (`Name`,`Image`,`PiecesLeft`,  `Description`, `Price`, `CategoryId`)
+VALUES ('Apple','../assets/pictures/2.png', 30, 'Apple is fine', 300, 1);
 
-INSERT INTO `Product` (`Name`,`Image`,`PiecesLeft`, `InStock`, `Description`, `Price`, `CategoryId`)
-VALUES ('Tomato','../assets/pictures/3.png', 10, TRUE, 'Tomato is red', 700, 2);
+INSERT INTO `Product` (`Name`,`Image`,`PiecesLeft`,  `Description`, `Price`, `CategoryId`)
+VALUES ('Tomato','../assets/pictures/3.png', 10,  'Tomato is red', 700, 2);
 
-INSERT INTO `Product` (`Name`,`Image`,`PiecesLeft`, `InStock`, `Description`, `Price`, `CategoryId`)
-VALUES ('Armchair','../assets/pictures/4.png', 0, FALSE, 'Ergonomic low-budget gaming chair.', 25000, 3);
+INSERT INTO `Product` (`Name`,`Image`,`PiecesLeft`,  `Description`, `Price`, `CategoryId`)
+VALUES ('Armchair','../assets/pictures/4.png', 0, 'Ergonomic low-budget gaming chair.', 25000, 3);
