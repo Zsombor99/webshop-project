@@ -14,17 +14,21 @@
 </style>
 <div class="container-fluid">
 <h1 class="text-center">Loadup Product</h1>
-<div class="row text-center">
+<div class="row">
 <div class="col-md-4 col-sm-4 col-xs-12"></div>
     <div class="col-md-4 col-sm-4 col-xs-12">
-        <form class="form-container" action="" method="post">
+        <form class="form-container" action="<?php Loadup::_Loadup() ?>" method="post">
             <div class="form-group">
                 <label class="tx" for="Image">Image</label>
                 <input id="Image" type="file" name="Image" class="form-control" required>
             </div>
             <div class="form-group">
                 <label class="tx" for="Category">Category</label>
-                <input id="Category" type="option" name="Category" class="form-control" required>
+                <select name="Category" id="Category">
+                    <?php for($i = 1; $i <= Loadup::GetNumberOfCategory(); ++$i):?>
+                        <?php echo "<option>". Loadup::GetNameOfCategoryById($i) ."</option>";?>
+                    <?php endfor; ?>
+                </select>
             </div>
             <div class="form-group">
                 <label class="tx" for="ProductName">Product Name</label>
@@ -33,6 +37,10 @@
             <div class="form-group">
                 <label class="tx" for="Price">Price</label>
                 <input id="Price" type="number" name="Price" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label class="tx" for="Pieces">Pieces</label>
+                <input id="Pieces" type="number" name="Pieces" class="form-control" required>
             </div>
             <div class="form-group">
                 <label class="tx" for="Description">Description</label>
