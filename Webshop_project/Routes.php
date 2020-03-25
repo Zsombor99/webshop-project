@@ -36,4 +36,8 @@ Route::set('loadup', function(){
     Product::CreateView('Loadup');
 });
 
+Route::set('404', function(){
+    Error404::CreateView('Error404');
+});
+
 ?>

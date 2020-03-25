@@ -9,10 +9,13 @@ class Register extends Controller{
             $EmailAddress = $_POST['EmailAddress'];
             $PhoneNumber = $_POST['PhoneNumber'];
             $Password = $_POST['Password'];
+            $RepeatPassword = $_POST['RepeatPassword'];
             
             $User = self::Query("SELECT `EmailAddress` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
             if(count($User) > 0) {
                 $_SESSION["UserInfo"] = "This e-mail has already been registered!";
+            } else if ($Password !== $RepeatPassword) {
+                $_SESSION["UserInfo"] = "Your passwords do not match!";
             } else {
             $Query = self::Query("INSERT INTO `User` (`FirstName`,
                                                         `LastName`,
