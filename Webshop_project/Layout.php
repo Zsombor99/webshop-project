@@ -32,9 +32,9 @@
                 <?php else : ?>
                     <a class="btn btn-success ml-2" href='<?= explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>login'><i class="fa fa-sign-in"></i> Login</a>
                     <a class="btn btn-success ml-2" href='<?= explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>register'><i class="fa fa-user-plus"></i> Register</a>
-                    <form action="<?php Login::_Login() ?>" method="POST" class="d-flex ml-auto mr-2">
-                        <input class="ml-2 border border-success rounded" id="EmailAddress" type="email" name="EmailAddress" placeholder="Email address" required>
-                        <input class="ml-2 border border-success rounded" id="Password" type="password" name="Password" placeholder="Password" required>
+                    <form action="<?php Login::_Login() ?>" method="POST" class="d-flex ml-auto mr-2 center-placeholder">
+                        <input class="ml-2 border border-success rounded" id="EmailAddress" type="email" name="EmailAddress" placeholder="Your e-mail address" required>
+                        <input class="ml-2 border border-success rounded" id="Password" type="password" name="Password" placeholder="Your password" required>
                         <button type="submit" class="btn btn-success ml-2">Login</button>
                     </form>
                 <?php endif; ?>

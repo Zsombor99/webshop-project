@@ -14,7 +14,7 @@
 </style>
 <div class="container-fluid">
 <h1 class="text-center">Loadup Product</h1>
-<div class="row">
+<div class="row text-center">
 <div class="col-md-4 col-sm-4 col-xs-12"></div>
     <div class="col-md-4 col-sm-4 col-xs-12">
         <form class="form-container" action="" method="post">
