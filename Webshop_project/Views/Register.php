@@ -1,17 +1,4 @@
-<style>
-.form-container {
-    border: 1px solid #4e0e0f;
-    padding: 50px 60px;
-    margin-top: 5vh;
-    -webkit-box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
-    background-color: #28a745
-}
-.tx {
-    color: #e4feff;
-}
-</style>
+
 <div class="container-fluid">
 <h1 class="text-center">Register</h1>
 <div class="row">
