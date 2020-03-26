@@ -18,7 +18,7 @@ class Login extends Controller
             } else {
                $_SESSION["UserInfo"] = "This e-mail is not yet registered!";
             }
-            header("Location: index.php");
+            header("Location: Home");
         }
     }
 }

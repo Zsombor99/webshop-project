@@ -2,7 +2,7 @@
         <h1 class="text-center">Loadup Product</h1>
         <div class="row">
             <div class="col-md-4 col-sm-4 col-xs-12">
-                <form class="form-container" action="<?php Loadup::_Loadup() ?>" method="post">
+                <form class="form-container" action="<?php LoadUp::_LoadUp() ?>" method="post">
                     <div class="form-group">
                         <label class="tx" for="Image">Image</label>
                         <input id="Image" type="file" name="ProductImage" class="form-control" required="required">
@@ -10,8 +10,8 @@
                     <div class="form-group">
                         <label class="tx" for="Category">Category</label>
                         <select name="ProductCategory[]" id="Category">
-                            <?php for($i = 1; $i <= Loadup::GetCountOfCategory(); ++$i):?>
-                                <option value="<?= $i ?>"><?= Loadup::GetNameOfCategoryById($i) ?></option>
+                            <?php for($i = 1; $i <= LoadUp::GetCountOfCategory(); ++$i):?>
+                                <option value="<?= $i ?>"><?= LoadUp::GetNameOfCategoryById($i) ?></option>
                             <?php endfor ?>
                         </select>
                     </div>

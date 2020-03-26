@@ -7,4 +7,4 @@
         }
     }
     spl_autoload_register('myAutoload');
-    require_once('Routes.php');
+    Route::_Route();

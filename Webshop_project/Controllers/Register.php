@@ -36,7 +36,7 @@ class Register extends Controller
                                             ]);
             $_SESSION["UserInfo"] = "Registration successful!";
             }
-            header("Location: index.php");
+            header("Location: Home");
         }
     }
 }

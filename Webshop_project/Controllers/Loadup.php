@@ -1,14 +1,14 @@
 <?php
-class Loadup extends Controller
+class LoadUp extends Controller
 {
-    public static $Title = "Loadup";
+    public static $Title = "LoadUp";
     public static function GetCountOfCategory() {
         return self::Query("SELECT COUNT(`Id`) FROM `Category`")[0][0];
     }
     public static function GetNameOfCategoryById($Id) {
          return self::Query("SELECT `Name` FROM `Category` WHERE `Id` = ?", [$Id])[0][0];
     }
-    public static function _Loadup() {
+    public static function _LoadUp() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $Msg = "";
             $ImageTarget = "./assets/pictures/" . basename($_FILES['Image']['name']); 
@@ -36,7 +36,7 @@ class Loadup extends Controller
             } else {
                 $Msg = "There was a problem uploading image";
             }      
-            header("Location: loadup");
+            header("Location: LoadUp");
         }     
     }
 }
