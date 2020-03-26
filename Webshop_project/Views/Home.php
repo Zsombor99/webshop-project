@@ -3,7 +3,7 @@
         <div class="col-4">
             <form id="home-input-categorys" class="row w-100 h-100" action="">
                 <label for="categorySelect">Category:</label>
-                <select id="categorySelect" size="3" class="custom-select" multiple="multiple">
+                <select name="categorySelect[]" id="categorySelect" size="3" class="custom-select" multiple="multiple">
                     <option value="Any">Any</option>
                     <?php for($i = 0; $i < count(Home::GetAllCategory()); ++ $i): ?>
                         <option value="<?= Home::GetAllCategory()[$i]['Id'] ?>"><?= Home::GetProductNameById($i + 1) ?></option>
