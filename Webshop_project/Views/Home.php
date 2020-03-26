@@ -26,6 +26,7 @@
                 <?php for($i = 0; $i <count($Products); ++ $i): ?>
                     <div class="card-body">
                         <h2><?=$Products[$i]['Name']?></h2>
+                        <img src="assets/pictures/<?=$Products[$i]['Image']?>" alt="" />
                         <h4 class="text-muted"><?= $Products[$i]['Price'] ?></h4>
                         <p>Category: <?= Home::GetCategoryNameById($Products[$i]['CategoryId'])?></p>
                         <p>Description: <?= $Products[$i]['Description'] ?></p>
