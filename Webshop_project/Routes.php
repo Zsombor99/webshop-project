@@ -1,43 +1,36 @@
 <?php
-
-Route::set('index.php', function(){
+Route::set('index.php', function() {
     Home::CreateView('Home');
 });
-Route::set('home', function(){
+Route::set('home', function() {
     Home::CreateView('Home');
 });
 
-Route::set('about_us', function(){
+Route::set('about_us', function() {
     AboutUs::CreateView('AboutUs');
     AboutUs::test();
 });
 
-Route::set('contact_us', function(){
+Route::set('contact_us', function() {
     ContactUs::CreateView('ContactUs');
 });
 
-Route::set('register', function(){
+Route::set('register', function() {
     Register::CreateView('Register');
 });
 
-Route::set('login', function(){
+Route::set('login', function() {
     Login::CreateView('Login');
 });
 
-Route::set('profile', function(){
+Route::set('profile', function() {
     Profile::CreateView('Profile');
 });
 
-Route::set('products', function(){
-    Product::CreateView('Product');
+Route::set('loadup', function() {
+    Loadup::CreateView('Loadup');
 });
 
-Route::set('loadup', function(){
-    Product::CreateView('Loadup');
-});
-
-Route::set('404', function(){
+Route::set('404', function() {
     Error404::CreateView('Error404');
 });
-
-?>

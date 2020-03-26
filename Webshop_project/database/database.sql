@@ -21,7 +21,7 @@ CREATE TABLE `Product`(
     `Id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `Name` VARCHAR(255) NOT NULL,
     `Image` VARCHAR(255) NOT NULL,
-    `PiecesLeft` INT NOT NULL,
+    `Quantity` INT NOT NULL,
     `Description` TEXT NOT NULL,
     `Price` INT NOT NULL,
     `CategoryId` INT NOT NULL,

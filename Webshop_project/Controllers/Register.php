@@ -1,5 +1,6 @@
 <?php
-class Register extends Controller{
+class Register extends Controller
+{
     public static $Title = "Register";
     public static function _Register() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -9,8 +10,7 @@ class Register extends Controller{
             $EmailAddress = $_POST['EmailAddress'];
             $PhoneNumber = $_POST['PhoneNumber'];
             $Password = $_POST['Password'];
-            $RepeatPassword = $_POST['RepeatPassword'];
-            
+            $RepeatPassword = $_POST['RepeatPassword'];       
             $User = self::Query("SELECT `EmailAddress` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
             if(count($User) > 0) {
                 $_SESSION["UserInfo"] = "This e-mail has already been registered!";
@@ -40,4 +40,3 @@ class Register extends Controller{
         }
     }
 }
-?>

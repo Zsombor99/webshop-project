@@ -1,13 +1,91 @@
 @import url('https://fonts.googleapis.com/css?family=Coiny&display=swap');
-
-*{
-    font-family: 'Coiny';
+* {
+    font-family: 'Coiny'
 }
 
 main {
-    padding-top: 80px;    
+    padding-top: 80px
 }
 
 .center-placeholder input {
+    text-align: center
+}
+
+#home-input-categorys {
+    padding-right: 10px;
+    border-right: 1px solid black
+}
+
+.form-container {
+    border: 1px solid #4e0e0f;
+    padding: 50px 60px;
+    margin-top: 6vh;
+    -webkit-box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 4px 26px 11px rgba(0, 0, 0, 0.75);
+    background-color: #28a745
+}
+
+.tx {
+    color: #e4feff
+}
+
+.footer {
+    padding-bottom: 0;
+    position: relative;
+    width: 100%;
+    height: 20px;
+    color: black;
+    text-align: center
+}
+
+.row {
+    height: 20px
+}
+
+.contact {
+    text-align: right
+}
+
+.icons {
+    text-align: center
+}
+
+.copyright {
+    font-weight: bold;
+    font-style: italic
+}
+
+.err-container {
+    width: 100%;
+    position: absolute;
+    top: 50%;
     text-align: center;
+    font-family: "Century Gothic";
+    transform: translateY(-50%);
+    background: rgb(186, 63, 251);
+    background: linear-gradient(90deg, rgba(186, 63, 251, 1) 31%, rgba(70, 98, 252, 1) 68%)
+}
+
+.err-container h1 {
+    font-size: 125px;
+    margin: 0;
+    font-weight: 1000;
+    letter-spacing: 32px;
+    color: #1d1210
+}
+
+.err-container a {
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 13;
+    background: #93401b;
+    text-transform: uppercase;
+    font-weight: 250;
+    text-decoration: none;
+    color: #ffffff
+}
+
+.err-container a:hover {
+    background: rosybrown
 }

@@ -1,5 +1,5 @@
 <?php
-class Profile extends Controller{
+class Profile extends Controller
+{
     public static $Title = "Profile";
 }
-?>

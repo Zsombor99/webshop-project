@@ -1,15 +1,11 @@
 <?php
-class Route{
-
-    public static $validRoutes = array();
-
-    public static function set($route, $function){
-
-        self::$validRoutes[] = $route;
-
-        if($_GET['url'] == $route){
-            $function->__invoke();
+class Route
+{
+    public static $ValidRoutes = [];
+    public static function set($Route, $Function) {
+        self::$ValidRoutes[] = $Route;
+        if($_GET['url'] == $Route) {
+            $Function->__invoke();
         }
     }
 }
-?>

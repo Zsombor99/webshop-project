@@ -1,5 +1,6 @@
 <?php
-class Logout extends Controller{
+class Logout extends Controller
+{
     public static function _Logout() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION["UserLogged"] = False;
@@ -8,4 +9,3 @@ class Logout extends Controller{
         }
     }
 }
-?>
