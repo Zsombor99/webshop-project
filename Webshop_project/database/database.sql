@@ -66,11 +66,11 @@ INSERT INTO `Category` (`Name`) VALUES ('Furniture');
 
 /* Some template product */
 
-INSERT INTO `Product` (`Name`,`Image`,`PiecesLeft`,  `Description`, `Price`, `CategoryId`)
-VALUES ('Apple','../assets/pictures/2.png', 30, 'Apple is fine', 300, 1);
+INSERT INTO `Product` (`Name`,`Image`,`Quantity`,  `Description`, `Price`, `CategoryId`)
+VALUES ('Apple','2.png', 30, 'Apple is fine', 300, 1);
 
-INSERT INTO `Product` (`Name`,`Image`,`PiecesLeft`,  `Description`, `Price`, `CategoryId`)
-VALUES ('Tomato','../assets/pictures/3.png', 10,  'Tomato is red', 700, 2);
+INSERT INTO `Product` (`Name`,`Image`,`Quantity`,  `Description`, `Price`, `CategoryId`)
+VALUES ('Tomato','3.png', 10,  'Tomato is red', 700, 2);
 
-INSERT INTO `Product` (`Name`,`Image`,`PiecesLeft`,  `Description`, `Price`, `CategoryId`)
-VALUES ('Armchair','../assets/pictures/4.png', 0, 'Ergonomic low-budget gaming chair.', 25000, 3);
+INSERT INTO `Product` (`Name`,`Image`,`Quantity`,  `Description`, `Price`, `CategoryId`)
+VALUES ('Armchair','4.png', 0, 'Ergonomic low-budget gaming chair.', 25000, 3);
