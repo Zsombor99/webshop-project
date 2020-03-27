@@ -51,7 +51,7 @@ header nav a i {
 	margin-right: 5px
 }
 main {
-	padding-top: 120px;
+	padding: 120px 0;
 }
 footer {
 	width: 100%;
@@ -80,6 +80,33 @@ footer {
 }
 .logout i {
 	margin-right: 5px
+}
+
+.heading-h1 {
+	margin: 20px;
+	text-align: center;
+}
+.loadup-form {
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+.loadup-form div label{
+	width: 10%;
+	text-align: left;
+	color: #28a745;
+}
+.loadup-form div input,
+.loadup-form div select{
+	width: 20%;
+	padding: 5px;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+.loadup-form div {
+	margin: 10px;
+}
+.loadup-button {
+	width: 30%;
 }
 /*@import url('https://fonts.googleapis.com/css?family=Coiny&display=swap');
 * {
