@@ -12,30 +12,30 @@
     </head>
     <body>
         <header>
-                <div id="logo">
-                    <img src="assets\pictures\logo.png" alt="Webshop logo">
-                </div>
-                <nav>
-                    <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>Home'><i class="fa fa-home"></i>Home</a>
-                    <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>ContactUs'><i class="fa fa-address-book"></i>Contact</a>
-                    <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>AboutUs'><i class="fa fa-info"></i>About</a>
-                    <?php if((isset($_SESSION["UserLogged"])) && ($_SESSION["UserLogged"] === True)): ?>
-                    <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>Profile'><i class="fa fa-user"></i></i>Profile</a>
-                    <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>LoadUp'><i class="fa fa-upload"></i>Loadup</a>
-                    <form action="<?php Logout::_Logout() ?>" method="POST">
-                        <button class="button logout" type="submit"><i class="fa fa-sign-out"></i>Logout</button>
+            <div id="logo">
+                <img src="assets\pictures\logo.png" alt="Webshop logo" />
+            </div>
+            <nav>
+                <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>Home'><i class="fa fa-home"></i>Home</a>
+                <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>ContactUs'><i class="fa fa-address-book"></i>Contact</a>
+                <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>AboutUs'><i class="fa fa-info"></i>About</a>
+                <?php if((isset($_SESSION["UserLogged"])) && ($_SESSION["UserLogged"] === True)): ?>
+                <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>Profile'><i class="fa fa-user"></i></i>Profile</a>
+                <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>LoadUp'><i class="fa fa-upload"></i>Loadup</a>
+                <form action="<?php Logout::_Logout() ?>" method="POST">
+                    <button class="button logout" type="submit"><i class="fa fa-sign-out"></i>Logout</button>
+                </form>
+                <?php else: ?>
+                <a class="button" href='<?= explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>Register'><i class="fa fa-user-plus"></i>Register</a>
+                <div id="loginarea">
+                    <form action="<?php Login::_Login() ?>" method="POST">
+                        <input id="EmailAddress" type="email" name="EmailAddress" placeholder="Email address" required="required">
+                        <input id="Password" type="password" name="Password" placeholder="Password" required="required">
+                        <button class="button" type="submit">Login</button>
                     </form>
-                    <?php else: ?>
-                    <a class="button" href='<?= explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>Register'><i class="fa fa-user-plus"></i>Register</a>
-                    <div id="loginarea">
-                        <form action="<?php Login::_Login() ?>" method="POST">
-                            <input id="EmailAddress" type="email" name="EmailAddress" placeholder="Email address" required="required">
-                            <input id="Password" type="password" name="Password" placeholder="Password" required="required">
-                            <button class="button" type="submit">Login</button>
-                        </form>
-                    </div>
-                    <?php endif ?>
-                </nav>               
+                </div>
+                <?php endif ?>
+            </nav>               
         </header>
         <main>
             <?php include($Content) ?>
@@ -44,16 +44,16 @@
             <div>
                 <div id="social-icons">
                     <a class="fb-ic">
-                        <i class="fa fa-facebook-f fa-lg white-text mr-md-4 mr-3 fa-2x"> </i>
+                        <i class="fa fa-facebook-f fa-lg white-text mr-md-4 mr-3 fa-2x"></i>
                     </a>
                     <a class="tw-ic">
-                        <i class="fa fa-twitter fa-lg white-text mr-md-4 mr-3 fa-2x"> </i>
+                        <i class="fa fa-twitter fa-lg white-text mr-md-4 mr-3 fa-2x"></i>
                     </a>
                     <a class="ins-ic">
-                        <i class="fa fa-instagram fa-lg white-text mr-md-4 mr-3 fa-2x"> </i>
+                        <i class="fa fa-instagram fa-lg white-text mr-md-4 mr-3 fa-2x"></i>
                     </a>
                     <a class="ytb-yt">
-                        <i class="fa fa-youtube fa-lg white-text mr-md-4 mr-3 fa-2x"> </i>
+                        <i class="fa fa-youtube fa-lg white-text mr-md-4 mr-3 fa-2x"></i>
                     </a>
                 </div>
                 <div id="contact-info">

@@ -40,35 +40,35 @@
         </div>
     </div>-->
 
-        <h1 class="heading-h1">Register</h1>
-        <form class="register-form" action="<?php Register::_Register() ?>" method="post">
-            <div>
-                <label for="FirstName">First name</label>
-                <input id="FirstName" type="text" name="FirstName" required="required" />
-            </div>
-            <div>
-                <label for="LastName">Last name</label>
-                <input id="LastName" type="text" name="LastName" required="required" />
-            </div>
-            <div>
-                <label for="EmailAddress">E-mail address</label>
-                <input id="EmailAddress" type="email" name="EmailAddress" required="required" />
-            </div>
-            <div>
-                <label for="Password">Password</label>
-                <input id="Password" type="password" name="Password" required="required" />
-            </div>
-            <div>
-                <label for="RepeatPassword">Repeat password</label>
-                <input id="RepeatPassword" type="password" name="Password" required="required" />
-            </div>
-            <div>
-                <label for="Address">Address</label>
-                <input id="Address" type="text" name="Address" required="required" />
-            </div>
-            <div>
-                <label for="PhoneNumber">Phone number</label>
-                <input id="PhoneNumber" type="text" name="PhoneNumber" required="required" />
-            </div>
-            <button type="submit" class="button regbutton">Register</button>
-        </form>
+    <h1 class="heading-h1">Register</h1>
+    <form class="register-form" action="<?php Register::_Register() ?>" method="post">
+        <div>
+            <label for="FirstName">First name</label>
+            <input id="FirstName" type="text" name="FirstName" required="required" />
+        </div>
+        <div>
+            <label for="LastName">Last name</label>
+            <input id="LastName" type="text" name="LastName" required="required" />
+        </div>
+        <div>
+            <label for="EmailAddress">E-mail address</label>
+            <input id="EmailAddress" type="email" name="EmailAddress" required="required" />
+        </div>
+        <div>
+            <label for="Password">Password</label>
+            <input id="Password" type="password" name="Password" required="required" />
+        </div>
+        <div>
+            <label for="RepeatPassword">Repeat password</label>
+            <input id="RepeatPassword" type="password" name="Password" required="required" />
+        </div>
+        <div>
+            <label for="Address">Address</label>
+            <input id="Address" type="text" name="Address" required="required" />
+        </div>
+        <div>
+            <label for="PhoneNumber">Phone number</label>
+            <input id="PhoneNumber" type="text" name="PhoneNumber" required="required" />
+        </div>
+        <button type="submit" class="button regbutton">Register</button>
+    </form>

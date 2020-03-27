@@ -35,7 +35,7 @@
             </div>
         </div>
     </div>-->
-	<h1 class="heading-h1">Welcome!</h1>
+    <h1 class="heading-h1">Welcome!</h1>
     <div class="home-container">
         <div class="leftside">
             <form action="" method="GET">
@@ -43,7 +43,7 @@
                 <select name="categorySelect[]" id="categorySelect" multiple="multiple">
                     <option value="Any">Any</option>
                     <?php for($i = 0; $i < count(Home::GetAllCategory()); ++ $i): ?>
-                        <option value="<?= Home::GetAllCategory()[$i]['Id'] ?>"><?= Home::GetProductNameById($i + 1) ?></option>
+                    <option value="<?= Home::GetAllCategory()[$i]['Id'] ?>"><?= Home::GetProductNameById($i + 1) ?></option>
                     <?php endfor ?>
                 </select>
                 <label for="priceMinInput">Price minimum:</label>
@@ -52,24 +52,24 @@
                 <input id="priceMaxInput" type="number" min="0" />
                 <div>
                     <label for="onlyInStockCheckBox">Only show items in stock</label>
-					<input type="checkbox" value="" id="onlyInStockCheckBox">
+                    <input type="checkbox" value="" id="onlyInStockCheckBox">
                 </div>
                 <button class="button product-search" type="submit">Search</button>
             </form>
         </div>
         <div class="rightside">
             <?php $Products = Home::GetAllProduct() ?>
-                <?php for($i = 0; $i <count($Products); ++ $i): ?>
-                    <div class="product-item">
-                        <img src="assets/pictures/<?= $Products[$i]['Image'] ?>" alt="The picture can't be loaded!" />
-                        <div class="product-item-details">
-							<h2><?=$Products[$i]['Name']?></h2>
-							<h4><?= $Products[$i]['Price'] ?>$</h4>
-							<p>Category: <?= Home::GetCategoryNameById($Products[$i]['CategoryId'])?></p>
-							<p>Description: <?= $Products[$i]['Description'] ?></p>
-						</div>
-						<button class="button buy-it" type="submit">Buy it!</button>
+            <?php for($i = 0; $i <count($Products); ++ $i): ?>
+                <div class="product-item">
+                    <img src="assets/pictures/<?= $Products[$i]['Image'] ?>" alt="The picture can't be loaded!" />
+                    <div class="product-item-details">
+                        <h2><?= $Products[$i]['Name'] ?></h2>
+                        <h4><?= $Products[$i]['Price'] ?>$</h4>
+                        <p>Category: <?= Home::GetCategoryNameById($Products[$i]['CategoryId']) ?></p>
+                        <p>Description: <?= $Products[$i]['Description'] ?></p>
                     </div>
-					<?php endfor ?>
+                    <button class="button buy-it" type="submit">Buy it!</button>
+                </div>
+            <?php endfor ?>
         </div>
     </div>
