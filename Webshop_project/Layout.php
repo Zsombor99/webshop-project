@@ -14,8 +14,8 @@
         <header>
                 <div id="logo">
                     <img src="assets\pictures\logo.png" alt="Webshop logo">
-				</div>
-				<nav>
+                </div>
+                <nav>
                     <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>Home'><i class="fa fa-home"></i>Home</a>
                     <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>ContactUs'><i class="fa fa-address-book"></i>Contact</a>
                     <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>AboutUs'><i class="fa fa-info"></i>About</a>
@@ -27,15 +27,15 @@
                     </form>
                     <?php else: ?>
                     <a class="button" href='<?= explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>Register'><i class="fa fa-user-plus"></i>Register</a>
-                	<div id="loginarea">
-						<form action="<?php Login::_Login() ?>" method="POST">
-							<input id="EmailAddress" type="email" name="EmailAddress" placeholder="Email address" required="required">
-							<input id="Password" type="password" name="Password" placeholder="Password" required="required">
-							<button class="button" type="submit">Login</button>
-						</form>
-					</div>
-					<?php endif ?>
-				</nav>               
+                    <div id="loginarea">
+                        <form action="<?php Login::_Login() ?>" method="POST">
+                            <input id="EmailAddress" type="email" name="EmailAddress" placeholder="Email address" required="required">
+                            <input id="Password" type="password" name="Password" placeholder="Password" required="required">
+                            <button class="button" type="submit">Login</button>
+                        </form>
+                    </div>
+                    <?php endif ?>
+                </nav>               
         </header>
         <main>
             <?php include($Content) ?>
