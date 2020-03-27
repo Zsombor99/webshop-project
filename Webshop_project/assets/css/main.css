@@ -1,11 +1,86 @@
-@import url('https://fonts.googleapis.com/css?family=Coiny&display=swap');
+header {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: flex-start;
+	font-size: 16px;
+	line-height: 23px;
+	position: fixed;
+	z-index: 1;
+	background: white;
+	padding: 10px;
+	box-shadow: 0 0 1px 2px rgba(0,0,0,0.1)
+}
+header div#logo {
+	flex-grow: 1
+}
+header nav {
+	flex-grow: 2
+}
+#loginarea {
+	float: right
+}
+#loginarea form input {
+	padding: 5px;
+	border: 1px solid #28a745;
+	border-radius: 3px;
+	margin-left: 10px;
+	outline: none
+}
+.button {
+	background: #28a745;
+	color: white;
+	padding: 5px 10px;
+	border: 0;
+	margin: 0 10px;
+	height: 35px;
+	border-radius: 3px;
+	transition: all 150ms
+}
+.button:hover {
+	background-color: tomato;
+	color: white;
+	text-decoration: none;
+	transition: all 150ms
+}
+
+header nav a i {
+	margin-right: 5px
+}
+main {
+	padding-top: 120px;
+}
+footer {
+	width: 100%;
+	font-size: 16px;
+	line-height: 23px;
+	background: white;
+	padding: 10px;
+	position: static;
+	box-shadow: 0 0 1px 2px rgba(0,0,0,0.1)
+}
+#social-icons {
+	padding: 50px 0;
+}
+#contact-info {
+	margin: 10px;
+	display: block;
+}
+#copyright {
+	text-align: center;
+	padding: 20px;
+	border-top: 1px solid rgba(0,0,0,0.1);
+	
+}
+
+/*@import url('https://fonts.googleapis.com/css?family=Coiny&display=swap');
 * {
     font-family: 'Coiny'
 }
 
-main {
-    padding-top: 80px
-}
 
 .center-placeholder input {
     text-align: center
@@ -88,4 +163,4 @@ main {
 
 .err-container a:hover {
     background: rosybrown
-}
+}*/
