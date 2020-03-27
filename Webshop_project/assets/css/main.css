@@ -75,7 +75,12 @@ footer {
 	border-top: 1px solid rgba(0,0,0,0.1);
 	
 }
-
+.logout {
+	float: right;
+}
+.logout i {
+	margin-right: 5px
+}
 /*@import url('https://fonts.googleapis.com/css?family=Coiny&display=swap');
 * {
     font-family: 'Coiny'

@@ -23,7 +23,7 @@
                     <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>Profile'><i class="fa fa-user"></i></i>Profile</a>
                     <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>LoadUp'><i class="fa fa-upload"></i>Loadup</a>
                     <form action="<?php Logout::_Logout() ?>" method="POST">
-                        <button type="submit"><i class="fa fa-sign-out"></i>Logout</button>
+                        <button class="button logout" type="submit"><i class="fa fa-sign-out"></i>Logout</button>
                     </form>
                     <?php else: ?>
                     <a class="button" href='<?= explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>Register'><i class="fa fa-user-plus"></i>Register</a>
