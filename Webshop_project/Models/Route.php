@@ -8,7 +8,8 @@ class Route
         "Register",
         "Login",
         "Profile",
-        "LoadUp"
+        "LoadUp",
+        "FAQ"
     ];
 
     public static function _Route() {

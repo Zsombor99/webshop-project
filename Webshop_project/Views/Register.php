@@ -60,7 +60,7 @@
         </div>
         <div>
             <label for="RepeatPassword">Repeat password</label>
-            <input id="RepeatPassword" type="password" name="Password" required="required" />
+            <input id="RepeatPassword" type="password" name="RepeatPassword" required="required" />
         </div>
         <div>
             <label for="Address">Address</label>
