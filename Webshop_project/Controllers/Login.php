@@ -12,6 +12,12 @@ class Login extends Controller
                     session_start();
                     $_SESSION["UserLogged"] = True;
                     $_SESSION["UserInfo"] = "Successful login";
+                    $_SESSION["UserFirstName"] = self::Query("SELECT `FirstName` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
+                    $_SESSION["UserLastName"] = self::Query("SELECT `LastName` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
+                    $_SESSION["UserAddress"] = self::Query("SELECT `Address` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
+                    $_SESSION["UserPhoneNumber"] = self::Query("SELECT `PhoneNumber` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
+                    $_SESSION["UserEmailAddress"] = self::Query("SELECT `EmailAddress` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
+                    $_SESSION["UserPassword"] = self::Query("SELECT `PasswordHash` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
                 } else {
                     $_SESSION["UserInfo"] = "Wrong credentials!";
                 }
