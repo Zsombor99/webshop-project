@@ -40,23 +40,21 @@
         <main>
             <?php include($Content) ?>
         </main>
-        <footer>
+        <footer class="page-footer font-small pt-4">
             <div>
-                <div id="social-icons">
-                    <a class="fb-ic">
-                        <i class="fa fa-facebook-f fa-lg white-text mr-md-4 mr-3 fa-2x"></i>
-                    </a>
-                    <a class="tw-ic">
-                        <i class="fa fa-twitter fa-lg white-text mr-md-4 mr-3 fa-2x"></i>
-                    </a>
-                    <a class="ins-ic">
-                        <i class="fa fa-instagram fa-lg white-text mr-md-4 mr-3 fa-2x"></i>
-                    </a>
-                    <a class="ytb-yt">
-                        <i class="fa fa-youtube fa-lg white-text mr-md-4 mr-3 fa-2x"></i>
-                    </a>
+            <section id="lab_social_icon_footer">
+                <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+                <div class="container">
+                    <div class="text-center center-block">
+                        <a href="https://www.facebook.com/laboreger/"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                        <a href="https://twitter.com/ekuhungary"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                        <a href="https://www.instagram.com/explore/locations/1972593649692882/labor-eger-kollektiv-haz"><i id="social-ins" class="fa fa-instagram fa-3x social"></i></a>
+	                    <a href="https://www.youtube.com/channel/UCGgKQ8RwAv6rIWr48vOFX0w"><i id="social-yt" class="fa fa-youtube-square fa-3x social"></i></a>
+	                    <a href="mailto:#"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+                    </div>
                 </div>
-                <div id="contact-info">
+            </section>
+                <div id="contact-info col-md-6 mt-md-0 mt-3">
                     <p>E-mail: webshop@webshop.com<br>Phone number:+36/1234567 <br> Address: 3300, Eger, Érsek utca 9</p>
                     <a href="https://www.google.com/intl/hu/policies/privacy/" target="_blank">Adatvédelem</a>
                     <span aria-hidden="true" role="presentation"> - </span>
