@@ -40,12 +40,13 @@
         <main>
             <?php include($Content) ?>
         </main>
-        <footer class="page-footer font-small pt-4">
+        <footer class="page-footer font-small pt-4 text-white bg-dark">
             <div>
             <section id="lab_social_icon_footer">
                 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
                 <div class="container">
                     <div class="text-center center-block">
+                        <h5 class="follow">Follow us</h5>
                         <a href="https://www.facebook.com/laboreger/"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
                         <a href="https://twitter.com/ekuhungary"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
                         <a href="https://www.instagram.com/explore/locations/1972593649692882/labor-eger-kollektiv-haz"><i id="social-ins" class="fa fa-instagram fa-3x social"></i></a>
@@ -59,10 +60,14 @@
                     <a href="https://www.google.com/intl/hu/policies/privacy/" target="_blank">Adatvédelem</a>
                     <span aria-hidden="true" role="presentation"> - </span>
                     <a href="https://www.google.com/intl/hu/policies/terms/" target="_blank">Általános Szerződési Feltételek</a>
+
+                    <button id="js-top">Scroll To Top</button>
                 </div>
             </div>
             <div id="copyright">Copyright &copy; Webshop <?= date("Y") ?></div>
         </footer>
+        <script src="stylesheet" href="assets/js/top.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     </body>

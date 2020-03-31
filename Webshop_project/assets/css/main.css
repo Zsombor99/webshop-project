@@ -61,7 +61,7 @@ footer {
 	box-shadow: 0 0 1px 2px rgba(0,0,0,0.1)
 }
 #lab_social_icon_footer a {
-	color: #333;
+	color: white;
 }
   
 #lab_social_icon_footer .social:hover {
@@ -81,10 +81,12 @@ footer {
   
 #lab_social_icon_footer #social-fb:hover {
 	color: #3B5998;
+
 }
   
 #lab_social_icon_footer #social-tw:hover {
 	color: #4099FF;
+
 }
 
 #lab_social_icon_footer #social-ins:hover {
@@ -96,6 +98,7 @@ footer {
   
 #lab_social_icon_footer #social-yt:hover {
 	color: #d34836;
+
 }
   
 #lab_social_icon_footer #social-em:hover {
@@ -103,7 +106,8 @@ footer {
 }
 
 #contact-info {
-	text-align: right;
+	font-style: inherit;
+	text-align: center;
 	margin: 10px;
 	display: block;
 }
@@ -113,10 +117,10 @@ p#contact-info {
 	text-align: center;
 }
 #copyright {
+	font-style: inherit;
 	text-align: center;
-	padding: 10px;
+	padding: 5px;
 	border-top: 1px solid rgba(0,0,0,0.1);
-	font-weight: bold;
 }
 .logout {
 	float: right;
@@ -245,6 +249,16 @@ p#contact-info {
 	width: 100%;
 }
 
+#js-top {
+	position: fixed;
+	bottom: 10px;
+	left: 50%;
+	display: none;
+  }
+
+.follow{
+	font-style: inherit;
+}
 
 /*@import url('https://fonts.googleapis.com/css?family=Coiny&display=swap');
 * {
