@@ -8,6 +8,9 @@ class Route
         "Register",
         "Login",
         "Profile",
+        "ProfilePersonal",
+        "ProfileEmail",
+        "ProfilePassword",
         "LoadUp",
         "FAQ"
     ];
