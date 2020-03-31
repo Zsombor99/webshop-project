@@ -11,8 +11,9 @@ class LoadUp extends Controller
     public static function _LoadUp() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $Msg = "";
-            $ImageTarget = "./assets/pictures/" . basename($_FILES['Image']['name']); 
-            $ProductImage = $_FILES['ProductImage']['name'];
+            # Trying to access array offset on value of type null in *\Loadup.php on line 15
+			$ImageTarget = "./assets/pictures/" . basename($_FILES['Image']['name']); 
+            $ProductImage = $_FILES['Image']['name'];
             $ProductCategory = $_POST['ProductCategory'];
             $ProductName = $_POST['ProductName'];
             $ProductPrice = $_POST['ProductPrice'];
@@ -31,6 +32,7 @@ class LoadUp extends Controller
                                 ]
                         );
 
+			#PHP Notice:  Undefined index: tmp_name in *\Loadup.php on line 36
             if(move_uploaded_file($_FILES['tmp_name']['name'], $ImageTarget)) {
                 $Msg = "Image uploaded succesfully";
             } else {

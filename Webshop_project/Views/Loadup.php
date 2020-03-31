@@ -68,7 +68,7 @@
         </div>
         <div>
             <label for="Description">Description</label>
-            <input id="Desctiption" type="text" name="ProductDesctiption" required="required" />
+            <input id="Desctiption" type="text" name="ProductDescription" required="required" />
         </div>
         <button class="button loadup-button" type="submit">Loadup</button>
     </form>
