@@ -13,13 +13,12 @@ class LoadUp extends Controller
             $Msg = "";        
 			$ImageTarget = "./assets/pictures/" . basename($_FILES['ProductImage']['name']); 
             $ProductImage = $_FILES['ProductImage']['name'];
-            $ProductCategory = $_POST['ProductCategory'];
+            $ProductCategory = $_POST['ProductCategory'][0];
             $ProductName = $_POST['ProductName'];
             $ProductPrice = $_POST['ProductPrice'];
             $ProductQuantity = $_POST['ProductQuantity'];
             $ProductDescription = $_POST['ProductDescription'];
-            $CategoryId = self::Query("SELECT `Id` FROM `Category` WHERE `Name` = ?", [$ProductCategory]);
-            self::Query("INSERT INTO `Product` (`Name`,`Image`,`Quantity`, `Description`, `Price`, `CategoryId`)
+			self::Query("INSERT INTO `Product` (`Name`,`Image`,`Quantity`, `Description`, `Price`, `CategoryId`)
                                 VALUES(?,?,?,?,?,?)",
                                 [
                                     $ProductName,
@@ -27,12 +26,12 @@ class LoadUp extends Controller
                                     $ProductQuantity,
                                     $ProductDescription,
                                     $ProductPrice,
-                                    $CategoryId
+                                    $ProductCategory
                                 ]
                         );
 
-			#PHP Notice:  Undefined index: tmp_name in *\Loadup.php on line 35
-            if(move_uploaded_file($_FILES['tmp_name']['name'], $ImageTarget)) {
+			
+            if(move_uploaded_file($_FILES['ProductImage']['tmp_name'], $ImageTarget)) {
                 $Msg = "Image uploaded succesfully";
             } else {
                 $Msg = "There was a problem uploading image";
