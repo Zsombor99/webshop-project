@@ -41,7 +41,7 @@
     
     -->
     <h1 class="heading-h1">Loadup Product</h1>       
-    <form class="loadup-form" action="<?php LoadUp::_LoadUp() ?>" method="post">
+    <form class="loadup-form" action="<?php LoadUp::_LoadUp() ?>" method="post" enctype="multipart/form-data">
         <div>
             <label for="Image">Image</label>
             <input id="Image" type="file" name="ProductImage" required="required" />
