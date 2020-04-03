@@ -1,30 +1,39 @@
 <?php
 class Login extends Controller
 {
-    public static $Title = "Login";
-    public static function _Login() {
-        if($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $EmailAddress = $_POST['EmailAddress'];
-            $Password = $_POST['Password'];    
-            $User = self::Query("SELECT `PasswordHash` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
-            if(count($User) > 0) {
-                if(password_verify($Password, $User[0]["PasswordHash"])) {
-                    session_start();
-                    $_SESSION["UserLogged"] = True;
-                    $_SESSION["UserInfo"] = "Successful login";
-                    $_SESSION["UserFirstName"] = self::Query("SELECT `FirstName` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
-                    $_SESSION["UserLastName"] = self::Query("SELECT `LastName` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
-                    $_SESSION["UserAddress"] = self::Query("SELECT `Address` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
-                    $_SESSION["UserPhoneNumber"] = self::Query("SELECT `PhoneNumber` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
-                    $_SESSION["UserEmailAddress"] = self::Query("SELECT `EmailAddress` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
-                    $_SESSION["UserPassword"] = self::Query("SELECT `PasswordHash` FROM `User` WHERE `EmailAddress` = ?", [$EmailAddress]);
-                } else {
-                    $_SESSION["UserInfo"] = "Wrong credentials!";
-                }
-            } else {
-               $_SESSION["UserInfo"] = "This e-mail is not yet registered!";
+    public $model;
+
+    function __construct()
+    {
+        $this->model = $this->load_model('User_model');
+    }
+
+    function index(){}
+
+    public function login() {
+        $emailAddress = $_POST['EmailAddress'];
+        $password = $_POST['Password'];
+
+        $user =  $this->model->get_user($emailAddress);
+
+        if (count($user) > 0){
+            if(password_verify($password, $user[0]["PasswordHash"])) {
+                $_SESSION["UserLogged"] = True;
+                $_SESSION["UserInfo"] = "Successful login";
+                $_SESSION["UserFirstName"] = $this->model->get_first_name($emailAddress);
+                $_SESSION["UserLastName"] = $this->model->get_last_name($emailAddress);
+                $_SESSION["UserAddress"] = $this->model->get_address($emailAddress);
+                $_SESSION["UserPhoneNumber"] = $this->model->get_phone_number($emailAddress);
+                $_SESSION["UserEmailAddress"] = $this->model->get_email_address($emailAddress);
+                $_SESSION["UserPassword"] = $this->model->get_password_hash($emailAddress);
             }
-            header("Location: Home");
+            else{
+                $_SESSION["UserInfo"] = "Wrong credentials!";
+            }
         }
+        else{
+            $_SESSION["UserInfo"] = "This e-mail is not yet registered!";
+        }     
+        header("Location: Home");  
     }
 }
