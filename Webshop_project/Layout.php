@@ -25,13 +25,13 @@
                 <?php if((isset($_SESSION["UserLogged"])) && ($_SESSION["UserLogged"] === True)): ?>
                 <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>Profile'><i class="fa fa-user"></i>Profile</a>
                 <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>LoadUp'><i class="fa fa-upload"></i>Loadup</a>
-                <form action="<?php Logout::_Logout() ?>" class="ml-auto" method="POST">
+                <form action="" class="ml-auto" method="POST">
                     <button class="button logout" type="submit"><i class="fa fa-sign-out"></i>Logout</button>
                 </form>
                 <?php else: ?>
                 <a class="button" href='<?= explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>Register'><i class="fa fa-user-plus"></i>Register</a>
                 <div id="loginarea" class="ml-auto">
-                    <form action="<?php Login::_Login() ?>" method="POST">
+                    <form action="Login/login" method="POST">
                         <input id="EmailAddress" type="email" name="EmailAddress" placeholder="Email address" required="required">
                         <input id="Password" type="password" name="Password" placeholder="Password" required="required">
                         <button class="button" type="submit"><i class="fa fa-sign-in"></i> Login</button>
@@ -41,7 +41,7 @@
             </nav>               
         </header>
         <main>
-            <?php include($Content) ?>            
+        <?php require_once "./Views/$View.php" ?>          
         </main>
         <footer class="page-footer font-small pt-4 text-white bg-dark">
             <div>
