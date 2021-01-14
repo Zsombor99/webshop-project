@@ -12,6 +12,7 @@ class Home extends Controller
     }
 
     public function index(){
+
         $this->load_view('Home',$this->model);
     }
     /*

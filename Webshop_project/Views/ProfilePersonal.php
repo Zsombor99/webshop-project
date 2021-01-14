@@ -3,7 +3,7 @@
 </div>
 
 <div>
-    <form class="register-form" action="<?php Profile::UpdatePersonal() ?>" method="post">
+    <form class="register-form" action="Profile/UpdatePersonal" method="post">
         <div>
             <label for="FirstName">First name<span class="text-danger">*</span></label>
             <input id="FirstName" type="text" name="FirstName" value="<?php print_r($_SESSION["UserFirstName"][0][0]); ?>" required="required" />

@@ -2,7 +2,7 @@
     <h1 class="heading-h1"><b>E-mail address</b></h1>
 </div>
 
-<form class="register-form" action="<?php Profile::UpdateEmail() ?>" method="post">
+<form class="register-form" action="Profile/UpdateEmail" method="post">
     <div>
         <label for="CurrentEmailAddress">Current e-mail<span class="text-danger">*</span></label>
         <input id="CurrentEmailAddress" type="email" name="CurrentEmailAddress" required="required" />

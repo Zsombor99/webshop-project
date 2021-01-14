@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+} ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,6 +20,7 @@
             <div id="logo">
                 <img src="assets\pictures\logo.png" alt="Webshop logo" width="60%" heigth="60%" />
             </div>
+            <?php //if(isset($_SESSION["UserInfo"])) echo $_SESSION["UserInfo"];?>
             <nav class="navbar d-flex justify-content-start">            
                 <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>Home'><i class="fa fa-home"></i>Home</a>
                 <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>ContactUs'><i class="fa fa-address-book"></i>Contact</a>
@@ -25,13 +28,13 @@
                 <?php if((isset($_SESSION["UserLogged"])) && ($_SESSION["UserLogged"] === True)): ?>
                 <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>Profile'><i class="fa fa-user"></i>Profile</a>
                 <a class="button" href='<?=explode("index", preg_quote($_SERVER['PHP_SELF']))[0]?>LoadUp'><i class="fa fa-upload"></i>Loadup</a>
-                <form action="" class="ml-auto" method="POST">
+                <form action="Logout/_logout" class="ml-auto" method="POST">
                     <button class="button logout" type="submit"><i class="fa fa-sign-out"></i>Logout</button>
                 </form>
                 <?php else: ?>
                 <a class="button" href='<?= explode("index", preg_quote($_SERVER['PHP_SELF']))[0] ?>Register'><i class="fa fa-user-plus"></i>Register</a>
                 <div id="loginarea" class="ml-auto">
-                    <form action="Login/login" method="POST">
+                    <form action="Login/_login" method="POST">
                         <input id="EmailAddress" type="email" name="EmailAddress" placeholder="Email address" required="required">
                         <input id="Password" type="password" name="Password" placeholder="Password" required="required">
                         <button class="button" type="submit"><i class="fa fa-sign-in"></i> Login</button>
@@ -41,7 +44,8 @@
             </nav>               
         </header>
         <main>
-        <?php require_once "./Views/$View.php" ?>          
+        <?php require_once "./Views/$View.php" ?> 
+                 
         </main>
         <footer class="page-footer font-small pt-4 text-white bg-dark">
             <div>

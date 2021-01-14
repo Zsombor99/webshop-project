@@ -1,5 +1,9 @@
 <?php
 class FAQ extends Controller
 {
-    public static $Title = "FAQ";
+    protected string $Title = "FAQ";
+    public function index(){
+
+        $this->load_view('FAQ');
+    }
 }

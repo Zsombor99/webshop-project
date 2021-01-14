@@ -1,40 +1,50 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 class Profile extends Controller
 {
-    public static $Title = "Profile";
+    protected string $Title = "Profile";
 
-    public static function UpdatePersonal() {
+    public function index(){
+
+        $this->load_view('Profile');
+    }
+    public $model;
+
+    function __construct()
+    {
+        $this->model = $this->load_model('User_model');
+    }
+
+    public function UpdatePersonal() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $FirstName = $_POST['FirstName'];
             $LastName = $_POST['LastName'];
             $Address = $_POST['Address'];  
             $PhoneNumber = $_POST['PhoneNumber'];
-            $Query = self::Query("UPDATE `User` SET `FirstName`=?,
-                                                    `LastName`=?,
-                                                    `Address`=?,
-                                                    `PhoneNumber`=?
-                                                WHERE `EmailAddress`=?", [$FirstName, $LastName, $Address, $PhoneNumber, $_SESSION['UserEmailAddress'][0][0]]);
+            $Query = $this->model->update_personal($FirstName, $LastName, $Address, $PhoneNumber, $_SESSION['UserEmailAddress'][0][0]);
             $_SESSION["UserInfo"] = "Settings updated successfully!";
-            header("Location: Home");
+           
+             header("Location: ../Home");
         }
     }
 
-    public static function UpdateEmail() {
+    public function UpdateEmail() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $CurrentEmailAddress = $_POST['CurrentEmailAddress'];
             $NewEmailAddress = $_POST['NewEmailAddress'];
             if($CurrentEmailAddress !== $_SESSION['UserEmailAddress'][0][0]) {
                 $_SESSION["UserInfo"] = "The email addresses do not match!";                
             } else {
-                $Query = self::Query("UPDATE `User` SET `EmailAddress`=?
-                                                    WHERE `EmailAddress`=?", [$NewEmailAddress, $_SESSION['UserEmailAddress'][0][0]]);
+                $Query = $this->model->update_email($NewEmailAddress, $_SESSION['UserEmailAddress'][0][0]);
                 $_SESSION["UserInfo"] = "Settings updated successfully!";
             }           
-            header("Location: Home");
+            header("Location: ../Home");
         }
     }
 
-    public static function UpdatePassword() {
+    public function UpdatePassword() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $CurrentPassword = $_POST['CurrentPassword'];
             $NewPassword = $_POST['NewPassword'];
@@ -45,11 +55,10 @@ class Profile extends Controller
                 $_SESSION["UserInfo"] = "Your new passwords do not match!";
             } else {
                 $Hash = password_hash($NewPassword, PASSWORD_BCRYPT);
-                $Query = self::Query("UPDATE `User` SET `PasswordHash`=?
-                                                WHERE `EmailAddress`=?", [$Hash, $_SESSION['UserEmailAddress'][0][0]]);
+                $Query = $this->model->update_password($Hash, $_SESSION['UserEmailAddress'][0][0]);
                 $_SESSION["UserInfo"] = "Settings updated successfully!";
             }
-            header("Location: Home");
+            header("Location: ../Home");
         }
     }
 }

@@ -1,14 +1,22 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 class LoadUp extends Controller
 {
-    public static $Title = "LoadUp";
-    public static function GetCountOfCategory() {
-        return self::Query("SELECT COUNT(`Id`) FROM `Category`")[0][0];
+    protected string $Title = "LoadUp";
+    public function index(){
+
+        $this->load_view('Loadup');
     }
-    public static function GetNameOfCategoryById($Id) {
-         return self::Query("SELECT `Name` FROM `Category` WHERE `Id` = ?", [$Id])[0][0];
+    public $model;
+
+    function __construct()
+    {
+        $this->model = $this->load_model('Product_model');
     }
-    public static function _LoadUp() {
+    
+    public  function _LoadUp() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
             $Msg = "";        
 			$ImageTarget = "./assets/pictures/" . basename($_FILES['ProductImage']['name']); 
@@ -18,25 +26,17 @@ class LoadUp extends Controller
             $ProductPrice = $_POST['ProductPrice'];
             $ProductQuantity = $_POST['ProductQuantity'];
             $ProductDescription = $_POST['ProductDescription'];
-			self::Query("INSERT INTO `Product` (`Name`,`Image`,`Quantity`, `Description`, `Price`, `CategoryId`)
-                                VALUES(?,?,?,?,?,?)",
-                                [
-                                    $ProductName,
-                                    $ProductImage,
-                                    $ProductQuantity,
-                                    $ProductDescription,
-                                    $ProductPrice,
-                                    $ProductCategory
-                                ]
-                        );
-
+			$Query = $this->model->InsertProduct($ProductName, $ProductImage, $ProductQuantity, $ProductDescription, $ProductPrice, $ProductCategory);
+            $_SESSION["LoadUp"]["MSG"] = "Successful upload";
 			
             if(move_uploaded_file($_FILES['ProductImage']['tmp_name'], $ImageTarget)) {
                 $Msg = "Image uploaded succesfully";
             } else {
                 $Msg = "There was a problem uploading image";
-            }      
-            header("Location: LoadUp");
+            }    
+            
+            
+            header("Location: ../LoadUp");
         }     
     }
 }

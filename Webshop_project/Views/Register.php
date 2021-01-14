@@ -41,7 +41,7 @@
     </div>-->
 
     <h1 class="heading-h1">Register</h1>
-    <form class="register-form" action="<?php Register::_Register() ?>" method="post">
+    <form class="register-form" action="Register/_register" method="post">
         <div>
             <label for="FirstName">First name</label>
             <input id="FirstName" type="text" name="FirstName" required="required" />

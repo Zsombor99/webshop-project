@@ -1,5 +1,9 @@
 <?php
 class ProfilePassword extends Controller
 {
-    public static $Title = "Profile";
+    protected string $Title = "Profile password change";
+    public function index(){
+
+        $this->load_view('ProfilePassword');
+    }
 }

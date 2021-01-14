@@ -40,8 +40,10 @@
     Régi verzió a fenti.
     
     -->
-    <h1 class="heading-h1">Loadup Product</h1>       
-    <form class="loadup-form" action="<?php LoadUp::_LoadUp() ?>" method="post" enctype="multipart/form-data">
+   
+    <h1 class="heading-h1">Loadup Product</h1>
+    <?php //if(isset($_SESSION["LoadUp"]["MSG"])) echo $_SESSION["LoadUp"]["MSG"];?>       
+    <form class="loadup-form" action="Loadup/_LoadUp" method="post" enctype="multipart/form-data">
         <div>
             <label for="Image">Image</label>
             <input id="Image" type="file" name="ProductImage" required="required" />
@@ -49,8 +51,8 @@
         <div>
             <label for="Category">Category</label>
             <select name="ProductCategory[]" id="Category">
-                <?php for($i = 1; $i <= LoadUp::GetCountOfCategory(); ++$i):?>
-                <option value="<?= $i ?>"><?= LoadUp::GetNameOfCategoryById($i) ?></option>
+                <?php for($i = 1; $i <=  $this->model->GetCountOfCategory(); ++$i):?>
+                <option value="<?= $i ?>"><?=  $this->model->GetNameOfCategoryById($i) ?></option>
                 <?php endfor ?>
             </select>
         </div>

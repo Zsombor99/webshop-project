@@ -1,5 +1,9 @@
 <?php
 class ProfilePersonal extends Controller
 {
-    public static $Title = "Profile";
+    protected string $Title = "Profile Personal change";
+    public function index(){
+
+        $this->load_view('ProfilePersonal');
+    }
 }

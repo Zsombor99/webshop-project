@@ -2,7 +2,7 @@
     <h1 class="heading-h1"><b>Password</b></h1>
 </div>
 
-<form class="register-form" action="<?php Profile::UpdatePassword() ?>" method="post">
+<form class="register-form" action="Profile/UpdatePassword" method="post">
     <div>
         <label for="CurrentPassword">Current password<span class="text-danger">*</span></label>
         <input id="CurrentPassword" type="password" name="CurrentPassword" required="required" />

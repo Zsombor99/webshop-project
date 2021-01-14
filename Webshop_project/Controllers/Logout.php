@@ -1,11 +1,12 @@
 <?php
+session_start();
 class Logout extends Controller
 {
-    public static function _Logout() {
+    public function _logout() {
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $_SESSION["UserLogged"] = False;
+            session_unset();
             session_destroy();
-            header("Location: Home");
+            header("Location: ../Home");
         }
     }
 }

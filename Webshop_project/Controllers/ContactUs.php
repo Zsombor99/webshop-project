@@ -1,5 +1,10 @@
 <?php
 class ContactUs extends Controller
 {
-    public static $Title = "Contact us";
+    protected string $Title = "Contact us";
+
+    public function index(){
+
+        $this->load_view('ContactUs');
+    }
 }
